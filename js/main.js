@@ -15,5 +15,13 @@ $(document).ready(function() {
 
     // Problem 5
     // call your problem 5 code here
+     var input =
+     [
+         ["zara", "dhyaan", "dein"],
+         ["mazarat", "chahenge"], // reverse this line
+         ["attention", "please"]
+     ]
+
+     restructure(input)
 
 });

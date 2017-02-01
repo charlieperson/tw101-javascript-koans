@@ -34,3 +34,16 @@
  */
 
 // Write your JavaScript here
+function restructure(phrases) {
+    var solution = ""
+    phrases.forEach((phrase, index) => {
+        if(index === 1) {
+            solution += phrase.reverse().join(" ")
+        } else {
+            solution += phrase.join(" ");
+        }
+        solution += " "
+    })
+
+    changeElementText("#formattedPhrases", solution)
+}
