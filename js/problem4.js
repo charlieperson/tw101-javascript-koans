@@ -27,3 +27,29 @@
 */
 
 // Write your JavaScript here
+
+var validBills = {5: true, 10: true, 20: true, 50: true, 100: true, 500: true, 1000: true}
+
+function countRupees() {
+    var args = Array.prototype.slice.call(arguments);
+    var billString = "";
+
+    args.forEach(bill => {
+        billString += bill + " "
+    })
+
+    changeElementText("#bills", billString);
+
+    var allValid = true;
+
+    var total = args.reduce((accum, currentBill)  => {
+        if(validBills[currentBill] && allValid) {
+            return accum + currentBill;
+        } else {
+            allValid = false;
+            return accum
+        }
+    }, 0)
+
+   changeElementText("#totalBillAmount", total)
+}
